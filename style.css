@@ -1,0 +1,66 @@
+/*_______________________________________Basic Settings(NOT Edit this!)_____________________________*/
+:root{
+}
+
+*{
+    margin: 0; /*Margin — это внешний отступ. Он создаёт пространство между границей элемента и соседними элементами*/
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.conteiner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px; /*это внутренний отступ. Он создаёт пространство между содержимым элемента (текстом, картинками) и его границей (border).*/ 
+    /*gap: ;расстояние между элементами в flex/grid-контейнере*/ 
+    background-color: black;
+}
+
+head,body{
+    
+}
+
+/*_______________________________________Header_____________________________*/
+header{
+    background-color: black;
+    gap: 0px;
+}
+
+.Logo_and_Label{
+    display: flex;
+    justify-content: center;
+    row-gap: 0px;
+    column-gap: 0px;
+    gap: 0px;
+}
+
+.temp_text_1{
+    color: white;
+
+}
+
+.Logo{
+    width:300px;
+    height:300px
+}
+/*_______________________________________Text_____________________________*/
+
+
+.temp_text_container{
+    display: flex;
+    justify-content: center;
+}
+
+.temp_text{
+    color: white;
+    margin-left: 300px;
+}
+
+
+/*_______________________________________MAIN_____________________________*/
+main{
+}
+
+/*_______________________________________Таблица_____________________________*/
