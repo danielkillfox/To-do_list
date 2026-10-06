@@ -10,37 +10,38 @@
         <header class="conteiner">
             <div class="Logo_and_Label">
                 <img class="Logo" src="Stylized_Brain_Logo_with_Symmetrical_Nodes-removebg-preview 500x500.png">
-                <h1 class="temp_text_1">Name of Product</h1>
+                <h1 class="temp_text_1" data-i18n="product_name">Name of Product</h1>
             </div>
         </header>
         <main class="conteiner">
             <div class="temp_text_container">
-                <p class="temp_text">Dont Forget.What important to you</p>
+                <p class="temp_text" data-i18n="tagline">Dont Forget.What important to you</p>
             </div>
 
 
             <div class="language_container"> <!--Тут будет выбор языка-->
-                <select>
-                    <option value="Russian"></option>
-                    <option value="English"></option>
+                <select id="language">
+                    <option value="ru" selected>Русский</option>
+                    <option value="en-US">English (US)</option>
+                    <option value="en-GB">English (UK)</option>
                 </select>
             </div>
 
-            <dialog id="addwindow"> <!--Есть его не видно -->
-                <form type="dialog"> <!--Это обязательно,чтобы браузер понял что это за форма-->
-                    <input type="date" id="date">
-                    <input type="text" id="Label">
-                    <input type="text" id="Zametca">
-                    <input type="checkbox" id="true_or_false">
-                    <button value="Cancel" id="addwindow_cancelbutton"></button>
-                    <button value="Ok" id="addwindow_continuebutton"></button>
+            <dialog id="addwindow"> <!--Есть его не видно, пока не вызван через showModal() -->
+                <form method="dialog"> <!--method="dialog" — браузер сам закроет окно и запишет value кнопки в dialog.returnValue-->
+                    <input type="date" name="date" id="date" required>
+                    <input type="text" name="label" id="label" placeholder="Label" data-i18n-placeholder="label_ph" required>
+                    <input type="text" name="zametca" id="zametca" placeholder="Note" data-i18n-placeholder="note_ph">
+                    <input type="checkbox" name="done" id="true_or_false">
+                    <button value="Cancel" id="addwindow_cancelbutton" formnovalidate data-i18n="cancel">Cancel</button>
+                    <button value="Ok" id="addwindow_continuebutton" data-i18n="add">Add</button>
                 </form>
             </dialog>
 
 
             <div class="to_do_list"> 
 <!--Есть 3 идеи.1) Кноака добовляет элемент таблицы с ее содержимым.2)Кнопка добовляет уже в сущесвующую таблицу заметку 3) Создание модульного окна-->
-                <button class="addbtn_style" id="addbtn" type="button">Add New</button>
+                <button class="addbtn_style" id="addbtn" type="button" data-i18n="add_new">Add New</button>
                 <table>
                     <thead>
 
