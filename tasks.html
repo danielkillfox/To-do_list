@@ -19,7 +19,7 @@
             </div>
 
 
-            <div class="language_container"> <!--Тут будет выбор языка-->
+            <div class="language_container">
                 <select id="language">
                     <option value="ru" selected>Русский</option>
                     <option value="en-US">English (US)</option>
@@ -42,11 +42,15 @@
             <div class="to_do_list"> 
 <!--Есть 3 идеи.1) Кноака добовляет элемент таблицы с ее содержимым.2)Кнопка добовляет уже в сущесвующую таблицу заметку 3) Создание модульного окна-->
                 <button class="addbtn_style" id="addbtn" type="button" data-i18n="add_new">Add New</button>
-                <table>
+                <table class="Tables" id="Tables_main">
                     <thead>
-                    </thead>
-                    <tbody>
 
+                    </thead>
+                    <tbody class="Tables_main" id="Tables_main_id">
+                        <td>Date</td>
+                        <td>Label</td>
+                        <td>Zamtca</td>
+                        <td>1 or 0</td>
                     </tbody>
                     <tfoot>
                         

@@ -7,6 +7,7 @@ const langSelect = document.querySelector("#language")
 
 
 // Словарь подписей. Ключи data-i18n / data-i18n-placeholder из tasks.html
+// Я так и не понял,как работает data-i18n / data-i18n-placeholder? на сайте https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/data-* показывется Data-id,но я не вижу чтобы в HTML я где-то указывал data-id
 const DICT = {
     "ru": {
         product_name: "Название продукта",
@@ -38,24 +39,20 @@ const DICT = {
     }
 }
 
-// ===== Шаг 2. Функция-переводчик =====
-// code = какой язык выбрали, например "ru". Функция меняет все тексты на странице на этот язык
 function applyLang(code) {
-    // Достаём нужный разговорник. Если такого языка нет, на всякий случай берём русский: DICT["ru"]
+
     const dict = DICT[code] || DICT["ru"]
 
-    // Меняем язык всей страницы, чтобы браузер знал (важно для переводчиков и чтения вслух)
     document.documentElement.lang = code
 
     // Находим ВСЕ штуки с ярлычком data-i18n (обычный текст: заголовки, кнопки)
     // и заменяем их текст на перевод из словаря
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
         const key = el.dataset.i18n // Читаем ярлычок, например "add_new"
-        if (dict[key] !== undefined) el.textContent = dict[key] // Если перевод есть, вставляем его
+        if (dict[key] !== undefined) el.textContent = dict[key]
     })
 
-    // То же самое, но для бледных подсказок внутри полей ввода (placeholder)
-    // Они хранятся не в тексте, а в свойстве placeholder, поэтому меняем по-другому
+    // То же самое, но для бледных подсказок
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
         const key = el.dataset.i18nPlaceholder // Читаем ярлычок, например "label_ph"
         if (dict[key] !== undefined) el.setAttribute("placeholder", dict[key])
